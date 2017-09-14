@@ -7,7 +7,7 @@
   <% @snack.machines.each do |machine| %>
     <li><%= machine.location %>
       (<%= pluralize(machine.snacks.count, 'kind') %> of <%= pluralize_without_count(machine.snacks.count, 'snack') %>, 
-      Average price: $<%= machine.average_price %>)</li>
+      Average price: $<%= machine.average_price + 0.99 %>)</li>
     <% end %>
     
 </ul>
