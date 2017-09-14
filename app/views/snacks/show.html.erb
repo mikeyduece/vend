@@ -5,7 +5,7 @@
 <h3>Locations:</h3>
 <ul>
   <% @snack.machines.each do |machine| %>
-    <li><%= machine.location %>
+    <li><%= link_to machine.location, machine_path(machine) %>
       (<%= pluralize(machine.snacks.count, 'kind') %> of <%= pluralize_without_count(machine.snacks.count, 'snack') %>, 
       Average price: $<%= machine.average_price + 0.99 %>)</li>
     <% end %>

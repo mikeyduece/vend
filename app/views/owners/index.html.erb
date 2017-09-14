@@ -2,6 +2,8 @@
 
 <ul>
   <% @owners.each do |owner| %>
-    <li><%= owner.name %></li>
+    <li><%= owner.name %>, Machines: <% owner.machines.each do |machine| %>
+                                        <li><%= link_to machine.location, machine_path(machine) %></li>
+                                                <% end %></li>
   <% end %>
 </ul>
