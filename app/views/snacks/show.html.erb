@@ -1,0 +1,13 @@
+<h1> <%= @snack.name %>'s Page</h1>
+
+<h3>Price: $ <%= @snack.price %> </h3>
+
+<h3>Locations:</h3>
+<ul>
+  <% @snack.machines.each do |machine| %>
+    <li><%= machine.location %>
+      (<%= pluralize(machine.snacks.count, 'kind') %> of <%= pluralize_without_count(machine.snacks.count, 'snack') %>, 
+      Average price: $<%= machine.average_price %>)</li>
+    <% end %>
+    
+</ul>
